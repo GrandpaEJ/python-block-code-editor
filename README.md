@@ -102,3 +102,4 @@ To extend the editor with new blocks:
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## CONTRIBUTING
+[CONTRIBUTING.md](CONTRIBUTING.md)
