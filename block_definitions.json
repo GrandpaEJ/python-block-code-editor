@@ -1,0 +1,509 @@
+{
+  "Print": {
+    "category": "Basic",
+    "color": [52, 152, 219],
+    "inputs": [
+      {
+        "name": "text",
+        "type": "text",
+        "default": "Hello, World!"
+      }
+    ],
+    "code_template": "print({text})",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Input": {
+    "category": "Basic",
+    "color": [52, 152, 219],
+    "inputs": [
+      {
+        "name": "prompt",
+        "type": "text",
+        "default": "Enter value: "
+      }
+    ],
+    "code_template": "input({prompt})",
+    "output_enabled": true,
+    "output_value": "input({prompt})",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Comment": {
+    "category": "Basic",
+    "color": [149, 165, 166],
+    "inputs": [
+      {
+        "name": "text",
+        "type": "text",
+        "default": "Add a comment here"
+      }
+    ],
+    "code_template": "# {text}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "VariableAssign": {
+    "category": "Variables",
+    "color": [155, 89, 182],
+    "inputs": [
+      {
+        "name": "name",
+        "type": "text",
+        "default": "variable"
+      },
+      {
+        "name": "value",
+        "type": "slot",
+        "default": "0"
+      }
+    ],
+    "code_template": "{name} = {value}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "VariableValue": {
+    "category": "Values",
+    "color": [243, 156, 18],
+    "inputs": [
+      {
+        "name": "name",
+        "type": "text",
+        "default": "variable"
+      }
+    ],
+    "code_template": "{name}",
+    "output_enabled": true,
+    "output_value": "{name}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "StringValue": {
+    "category": "Values",
+    "color": [243, 156, 18],
+    "inputs": [
+      {
+        "name": "value",
+        "type": "text",
+        "default": "text"
+      }
+    ],
+    "code_template": "\"{value}\"",
+    "output_enabled": true,
+    "output_value": "\"{value}\"",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "NumberValue": {
+    "category": "Values",
+    "color": [243, 156, 18],
+    "inputs": [
+      {
+        "name": "value",
+        "type": "text",
+        "default": "0"
+      }
+    ],
+    "code_template": "{value}",
+    "output_enabled": true,
+    "output_value": "{value}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "BooleanValue": {
+    "category": "Values",
+    "color": [243, 156, 18],
+    "inputs": [
+      {
+        "name": "value",
+        "type": "choice",
+        "choices": ["True", "False"],
+        "default": "True"
+      }
+    ],
+    "code_template": "{value}",
+    "output_enabled": true,
+    "output_value": "{value}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "If": {
+    "category": "Control",
+    "color": [231, 76, 60],
+    "inputs": [
+      {
+        "name": "condition",
+        "type": "slot",
+        "default": "True"
+      }
+    ],
+    "code_template": "if {condition}:",
+    "has_children": true,
+    "has_else_children": true,
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "For": {
+    "category": "Control",
+    "color": [231, 76, 60],
+    "inputs": [
+      {
+        "name": "variable",
+        "type": "text",
+        "default": "i"
+      },
+      {
+        "name": "iterable",
+        "type": "slot",
+        "default": "range(10)"
+      }
+    ],
+    "code_template": "for {variable} in {iterable}:",
+    "has_children": true,
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "While": {
+    "category": "Control",
+    "color": [231, 76, 60],
+    "inputs": [
+      {
+        "name": "condition",
+        "type": "slot",
+        "default": "True"
+      }
+    ],
+    "code_template": "while {condition}:",
+    "has_children": true,
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Break": {
+    "category": "Control",
+    "color": [231, 76, 60],
+    "inputs": [],
+    "code_template": "break",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Continue": {
+    "category": "Control",
+    "color": [231, 76, 60],
+    "inputs": [],
+    "code_template": "continue",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Add": {
+    "category": "Math",
+    "color": [46, 204, 113],
+    "inputs": [
+      {
+        "name": "a",
+        "type": "slot",
+        "default": "0"
+      },
+      {
+        "name": "b",
+        "type": "slot",
+        "default": "0"
+      }
+    ],
+    "code_template": "{a} + {b}",
+    "output_enabled": true,
+    "output_value": "{a} + {b}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Subtract": {
+    "category": "Math",
+    "color": [46, 204, 113],
+    "inputs": [
+      {
+        "name": "a",
+        "type": "slot",
+        "default": "0"
+      },
+      {
+        "name": "b",
+        "type": "slot",
+        "default": "0"
+      }
+    ],
+    "code_template": "{a} - {b}",
+    "output_enabled": true,
+    "output_value": "{a} - {b}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Multiply": {
+    "category": "Math",
+    "color": [46, 204, 113],
+    "inputs": [
+      {
+        "name": "a",
+        "type": "slot",
+        "default": "0"
+      },
+      {
+        "name": "b",
+        "type": "slot",
+        "default": "0"
+      }
+    ],
+    "code_template": "{a} * {b}",
+    "output_enabled": true,
+    "output_value": "{a} * {b}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Divide": {
+    "category": "Math",
+    "color": [46, 204, 113],
+    "inputs": [
+      {
+        "name": "a",
+        "type": "slot",
+        "default": "0"
+      },
+      {
+        "name": "b",
+        "type": "slot",
+        "default": "1"
+      }
+    ],
+    "code_template": "{a} / {b}",
+    "output_enabled": true,
+    "output_value": "{a} / {b}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Equal": {
+    "category": "Logic",
+    "color": [41, 128, 185],
+    "inputs": [
+      {
+        "name": "a",
+        "type": "slot",
+        "default": "0"
+      },
+      {
+        "name": "b",
+        "type": "slot",
+        "default": "0"
+      }
+    ],
+    "code_template": "{a} == {b}",
+    "output_enabled": true,
+    "output_value": "{a} == {b}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "NotEqual": {
+    "category": "Logic",
+    "color": [41, 128, 185],
+    "inputs": [
+      {
+        "name": "a",
+        "type": "slot",
+        "default": "0"
+      },
+      {
+        "name": "b",
+        "type": "slot",
+        "default": "0"
+      }
+    ],
+    "code_template": "{a} != {b}",
+    "output_enabled": true,
+    "output_value": "{a} != {b}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "LessThan": {
+    "category": "Logic",
+    "color": [41, 128, 185],
+    "inputs": [
+      {
+        "name": "a",
+        "type": "slot",
+        "default": "0"
+      },
+      {
+        "name": "b",
+        "type": "slot",
+        "default": "0"
+      }
+    ],
+    "code_template": "{a} < {b}",
+    "output_enabled": true,
+    "output_value": "{a} < {b}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "GreaterThan": {
+    "category": "Logic",
+    "color": [41, 128, 185],
+    "inputs": [
+      {
+        "name": "a",
+        "type": "slot",
+        "default": "0"
+      },
+      {
+        "name": "b",
+        "type": "slot",
+        "default": "0"
+      }
+    ],
+    "code_template": "{a} > {b}",
+    "output_enabled": true,
+    "output_value": "{a} > {b}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Function": {
+    "category": "Functions",
+    "color": [142, 68, 173],
+    "inputs": [
+      {
+        "name": "name",
+        "type": "text",
+        "default": "my_function"
+      },
+      {
+        "name": "params",
+        "type": "text",
+        "default": ""
+      }
+    ],
+    "code_template": "def {name}({params}):",
+    "has_children": true,
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "Return": {
+    "category": "Functions",
+    "color": [142, 68, 173],
+    "inputs": [
+      {
+        "name": "value",
+        "type": "slot",
+        "default": ""
+      }
+    ],
+    "code_template": "return {value}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "FunctionCall": {
+    "category": "Functions",
+    "color": [142, 68, 173],
+    "inputs": [
+      {
+        "name": "name",
+        "type": "text",
+        "default": "my_function"
+      },
+      {
+        "name": "args",
+        "type": "text",
+        "default": ""
+      }
+    ],
+    "code_template": "{name}({args})",
+    "output_enabled": true,
+    "output_value": "{name}({args})",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "ListValue": {
+    "category": "Data",
+    "color": [211, 84, 0],
+    "inputs": [
+      {
+        "name": "items",
+        "type": "text",
+        "default": ""
+      }
+    ],
+    "code_template": "[{items}]",
+    "output_enabled": true,
+    "output_value": "[{items}]",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "DictValue": {
+    "category": "Data",
+    "color": [211, 84, 0],
+    "inputs": [
+      {
+        "name": "items",
+        "type": "text",
+        "default": ""
+      }
+    ],
+    "code_template": "{{{items}}}",
+    "output_enabled": true,
+    "output_value": "{{{items}}}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "ImportModule": {
+    "category": "Advanced",
+    "color": [22, 160, 133],
+    "inputs": [
+      {
+        "name": "module",
+        "type": "text",
+        "default": "math"
+      }
+    ],
+    "code_template": "import {module}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "FromImport": {
+    "category": "Advanced",
+    "color": [22, 160, 133],
+    "inputs": [
+      {
+        "name": "module",
+        "type": "text",
+        "default": "math"
+      },
+      {
+        "name": "names",
+        "type": "text",
+        "default": "pi, sqrt"
+      }
+    ],
+    "code_template": "from {module} import {names}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "DirectCode": {
+    "category": "Advanced",
+    "color": [22, 160, 133],
+    "inputs": [
+      {
+        "name": "code",
+        "type": "text",
+        "default": "# Enter your code here"
+      }
+    ],
+    "code_template": "{code}",
+    "direct_code_enabled": true,
+    "can_be_nested": true
+  },
+  "CodeBlock": {
+    "category": "Advanced",
+    "color": [22, 160, 133],
+    "inputs": [],
+    "code_template": "",
+    "has_children": true,
+    "direct_code_enabled": true,
+    "can_import_blocks": true,
+    "can_be_nested": true
+  }
+} 

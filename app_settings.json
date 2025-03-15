@@ -1,0 +1,127 @@
+{
+  "application": {
+    "name": "Python Block Code Editor by Grandpa EJ",
+    "author": "Grandpa EJ",
+    "version": "1.0.0",
+    "default_save_path": "./projects",
+    "recent_files_count": 5,
+    "auto_save_interval": 300,
+    "check_for_updates": true
+  },
+  "ui": {
+    "theme": "light",
+    "themes": {
+      "light": {
+        "background_color": "#f5f5f5",
+        "text_color": "#333333",
+        "accent_color": "#3498db",
+        "success_color": "#2ecc71",
+        "warning_color": "#f39c12",
+        "error_color": "#e74c3c",
+        "highlight_color": "#9b59b6",
+        "panel_color": "#ffffff",
+        "border_color": "#dddddd"
+      },
+      "dark": {
+        "background_color": "#2c3e50",
+        "text_color": "#ecf0f1",
+        "accent_color": "#3498db",
+        "success_color": "#2ecc71",
+        "warning_color": "#f39c12",
+        "error_color": "#e74c3c",
+        "highlight_color": "#9b59b6",
+        "panel_color": "#34495e",
+        "border_color": "#7f8c8d"
+      }
+    },
+    "font_family": "Consolas, 'Courier New', monospace",
+    "font_size": 12,
+    "show_line_numbers": true,
+    "show_toolbar": true,
+    "show_status_bar": true,
+    "block_palette_width": 250,
+    "output_panel_height": 200
+  },
+  "editor": {
+    "indentation_size": 4,
+    "use_tabs": false,
+    "word_wrap": false,
+    "auto_indent": true,
+    "highlight_current_line": true,
+    "show_whitespace": false,
+    "match_brackets": true,
+    "auto_close_brackets": true,
+    "auto_close_quotes": true
+  },
+  "blocks": {
+    "default_category": "Basic",
+    "categories": [
+      "Basic",
+      "Values",
+      "Variables",
+      "Math",
+      "Logic",
+      "Control",
+      "Functions",
+      "Data",
+      "Advanced"
+    ],
+    "categories_expanded": {
+      "Basic": true,
+      "Values": true,
+      "Variables": true,
+      "Math": false,
+      "Logic": false,
+      "Control": false,
+      "Functions": false,
+      "Data": false,
+      "Advanced": false
+    },
+    "snap_to_grid": true,
+    "grid_size": 10,
+    "default_block_margin": 5,
+    "animation_speed": 200,
+    "block_shadows": true,
+    "block_rounding": 5
+  },
+  "execution": {
+    "timeout_seconds": 10,
+    "max_output_lines": 1000,
+    "clear_output_on_run": true,
+    "show_execution_time": true,
+    "allow_file_io": false,
+    "allow_network": false,
+    "allow_imports": true,
+    "restricted_modules": [
+      "os.system",
+      "subprocess",
+      "shutil.rmtree"
+    ]
+  },
+  "code_suggestion": {
+    "enabled": true,
+    "auto_suggest": true,
+    "min_characters": 2,
+    "model_path": "./models/suggestion_model.pkl",
+    "max_suggestions": 5,
+    "use_history": true,
+    "history_weight": 0.7
+  },
+  "shortcuts": {
+    "run": "F5",
+    "save": "Ctrl+S",
+    "load": "Ctrl+O",
+    "new": "Ctrl+N",
+    "cut": "Ctrl+X",
+    "copy": "Ctrl+C",
+    "paste": "Ctrl+V",
+    "undo": "Ctrl+Z",
+    "redo": "Ctrl+Y",
+    "find": "Ctrl+F",
+    "zoom_in": "Ctrl++",
+    "zoom_out": "Ctrl+-",
+    "zoom_reset": "Ctrl+0",
+    "toggle_palette": "Ctrl+B",
+    "toggle_output": "Ctrl+J"
+  }
+} 

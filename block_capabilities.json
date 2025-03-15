@@ -1,0 +1,200 @@
+{
+  "nesting_rules": {
+    "Print": {
+      "text": {
+        "allowed": ["VariableValue", "StringValue", "NumberValue", "BooleanValue", "ListValue", "DictValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "Equal", "NotEqual", "LessThan", "GreaterThan", "LessEqual", "GreaterEqual", "And", "Or", "Not", "StringConcat", "StringFormat", "StringLength", "ListGet", "DictGet", "Input"],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      }
+    },
+    "VariableAssign": {
+      "value": {
+        "allowed": ["VariableValue", "StringValue", "NumberValue", "BooleanValue", "ListValue", "DictValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "Equal", "NotEqual", "LessThan", "GreaterThan", "LessEqual", "GreaterEqual", "And", "Or", "Not", "StringConcat", "StringFormat", "StringLength", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      }
+    },
+    "If": {
+      "condition": {
+        "allowed": ["VariableValue", "BooleanValue", "Equal", "NotEqual", "LessThan", "GreaterThan", "LessEqual", "GreaterEqual", "And", "Or", "Not"],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "children": {
+        "allowed": ["Print", "VariableAssign", "If", "While", "For", "ForEach", "Return", "Break", "Continue", "ListAppend", "ListSet", "DictSet", "FunctionCall"],
+        "denied": []
+      },
+      "else_children": {
+        "allowed": ["Print", "VariableAssign", "If", "While", "For", "ForEach", "Return", "Break", "Continue", "ListAppend", "ListSet", "DictSet", "FunctionCall"],
+        "denied": []
+      }
+    },
+    "While": {
+      "condition": {
+        "allowed": ["VariableValue", "BooleanValue", "Equal", "NotEqual", "LessThan", "GreaterThan", "LessEqual", "GreaterEqual", "And", "Or", "Not"],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "children": {
+        "allowed": ["Print", "VariableAssign", "If", "While", "For", "ForEach", "Return", "Break", "Continue", "ListAppend", "ListSet", "DictSet", "FunctionCall"],
+        "denied": []
+      }
+    },
+    "For": {
+      "variable": {
+        "allowed": [],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "start": {
+        "allowed": ["VariableValue", "NumberValue"],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "end": {
+        "allowed": ["VariableValue", "NumberValue"],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "step": {
+        "allowed": ["VariableValue", "NumberValue"],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "children": {
+        "allowed": ["Print", "VariableAssign", "If", "While", "For", "ForEach", "Return", "Break", "Continue", "ListAppend", "ListSet", "DictSet", "FunctionCall"],
+        "denied": []
+      }
+    },
+    "ForEach": {
+      "variable": {
+        "allowed": [],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "iterable": {
+        "allowed": ["VariableValue", "ListValue", "StringValue", "DictValue"],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "children": {
+        "allowed": ["Print", "VariableAssign", "If", "While", "For", "ForEach", "Return", "Break", "Continue", "ListAppend", "ListSet", "DictSet", "FunctionCall"],
+        "denied": []
+      }
+    },
+    "Function": {
+      "name": {
+        "allowed": [],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "params": {
+        "allowed": [],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "children": {
+        "allowed": ["Print", "VariableAssign", "If", "While", "For", "ForEach", "Return", "Break", "Continue", "ListAppend", "ListSet", "DictSet", "FunctionCall"],
+        "denied": []
+      }
+    },
+    "FunctionCall": {
+      "name": {
+        "allowed": [],
+        "denied": ["Function", "FunctionCall", "If", "While", "For", "ForEach"]
+      },
+      "args": {
+        "allowed": ["VariableValue", "StringValue", "NumberValue", "BooleanValue", "ListValue", "DictValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "Equal", "NotEqual", "LessThan", "GreaterThan", "LessEqual", "GreaterEqual", "And", "Or", "Not", "StringConcat", "StringFormat", "StringLength", "ListGet", "DictGet", "Input"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      }
+    },
+    "Return": {
+      "value": {
+        "allowed": ["VariableValue", "StringValue", "NumberValue", "BooleanValue", "ListValue", "DictValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "Equal", "NotEqual", "LessThan", "GreaterThan", "LessEqual", "GreaterEqual", "And", "Or", "Not", "StringConcat", "StringFormat", "StringLength", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      }
+    },
+    "Add": {
+      "left": {
+        "allowed": ["VariableValue", "StringValue", "NumberValue", "ListValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "StringConcat", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      },
+      "right": {
+        "allowed": ["VariableValue", "StringValue", "NumberValue", "ListValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "StringConcat", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      }
+    },
+    "Subtract": {
+      "left": {
+        "allowed": ["VariableValue", "NumberValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      },
+      "right": {
+        "allowed": ["VariableValue", "NumberValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      }
+    },
+    "Equal": {
+      "left": {
+        "allowed": ["VariableValue", "StringValue", "NumberValue", "BooleanValue", "ListValue", "DictValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "StringConcat", "StringFormat", "StringLength", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      },
+      "right": {
+        "allowed": ["VariableValue", "StringValue", "NumberValue", "BooleanValue", "ListValue", "DictValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "StringConcat", "StringFormat", "StringLength", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      }
+    },
+    "ListAppend": {
+      "list": {
+        "allowed": ["VariableValue", "ListValue", "ListGet", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      },
+      "item": {
+        "allowed": ["VariableValue", "StringValue", "NumberValue", "BooleanValue", "ListValue", "DictValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "Equal", "NotEqual", "LessThan", "GreaterThan", "LessEqual", "GreaterEqual", "And", "Or", "Not", "StringConcat", "StringFormat", "StringLength", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      }
+    },
+    "ListGet": {
+      "list": {
+        "allowed": ["VariableValue", "ListValue", "ListGet", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      },
+      "index": {
+        "allowed": ["VariableValue", "NumberValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      }
+    },
+    "DictGet": {
+      "dict": {
+        "allowed": ["VariableValue", "DictValue", "DictGet", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      },
+      "key": {
+        "allowed": ["VariableValue", "StringValue", "NumberValue", "Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide", "StringConcat", "StringFormat", "StringLength", "ListGet", "DictGet", "Input", "FunctionCall"],
+        "denied": ["Function", "If", "While", "For", "ForEach"]
+      }
+    }
+  },
+  "input_types": {
+    "Print": {
+      "message": "print_slot"
+    },
+    "If": {
+      "condition": "condition_slot"
+    },
+    "IfElse": {
+      "condition": "condition_slot"
+    },
+    "While": {
+      "condition": "condition_slot"
+    },
+    "For": {
+      "iterable": "variable_slot"
+    },
+    "Variable": {
+      "value": "default"
+    },
+    "StringValue": {
+      "text": "default"
+    },
+    "NumberValue": {
+      "number": "default"
+    }
+  },
+  "block_categories": {
+    "Basic": ["Print", "Variable", "Input", "Comment", "DirectCode"],
+    "Values": ["Value", "StringValue", "NumberValue", "BooleanValue", "ListValue", "DictValue"],
+    "Math": ["Add", "Subtract", "Multiply", "Divide", "Modulo", "Power", "IntDivide"],
+    "Logic": ["Compare", "And", "Or", "Not", "If", "IfElse", "While", "For"],
+    "Functions": ["Define Function", "Call Function", "Return"],
+    "Data": ["List Get", "List Set", "List Append", "Dict Get", "Dict Set", "ListLength", "StringLength"]
+  }
+} 
