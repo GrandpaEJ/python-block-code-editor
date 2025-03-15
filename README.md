@@ -101,6 +101,4 @@ To extend the editor with new blocks:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgements
-
-Inspired by block-based programming environments like Scratch, Blockly, and similar visual programming tools. 
+## CONTRIBUTING
